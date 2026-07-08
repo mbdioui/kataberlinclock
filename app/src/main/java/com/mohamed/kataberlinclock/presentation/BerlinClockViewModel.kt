@@ -15,7 +15,7 @@ internal class BerlinClockViewModel(
 ) : ViewModel() {
 
     val uiState: StateFlow<BerlinClockUiState> = timeRepository.getLiveTime()
-        .map { time -> BerlinClockUiState.Success(convertToBerlinClockUseCase(time)) }
+        .map { time -> BerlinClockUiState.Success(time,convertToBerlinClockUseCase(time)) }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
