@@ -58,11 +58,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    // koin Dependency Injection
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 
+    //unit testing
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
     testRuntimeOnly(libs.junit.platform.launcher)
-
     testImplementation(libs.turbine)
     testImplementation(libs.kotlinx.coroutines.test)
 }
