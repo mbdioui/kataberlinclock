@@ -8,6 +8,7 @@ import com.mohamed.kataberlinclock.domain.usecase.ConvertToBerlinClockUseCase
 import com.mohamed.kataberlinclock.presentation.BerlinClockViewModel
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 internal val appModule = module {
@@ -18,5 +19,5 @@ internal val appModule = module {
     factory { ConvertToBerlinClockUseCase() }
 
 
-    factory { BerlinClockViewModel(get(), get()) }
+    viewModelOf(::BerlinClockViewModel)
 }

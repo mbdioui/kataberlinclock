@@ -28,7 +28,7 @@ import com.mohamed.kataberlinclock.ui.component.LampRow
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-private fun BerlinClockScreen(
+internal fun BerlinClockScreen(
     modifier: Modifier = Modifier,
     viewModel: BerlinClockViewModel = koinViewModel(),
 ) {
