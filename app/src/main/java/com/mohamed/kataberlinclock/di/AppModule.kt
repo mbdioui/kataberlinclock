@@ -1,6 +1,6 @@
 package com.mohamed.kataberlinclock.di
 
-import com.mohamed.kataberlinclock.data.repository.SystemTimeRepository
+import com.mohamed.kataberlinclock.data.repository.SystemTimeRepositoryImpl
 import com.mohamed.kataberlinclock.data.util.SystemClock
 import com.mohamed.kataberlinclock.domain.model.Clock
 import com.mohamed.kataberlinclock.domain.repository.TimeRepository
@@ -14,7 +14,7 @@ import org.koin.dsl.module
 internal val appModule = module {
     singleOf(::SystemClock) { bind<Clock>() }
 
-    singleOf(::SystemTimeRepository) { bind<TimeRepository>() }
+    singleOf(::SystemTimeRepositoryImpl) { bind<TimeRepository>() }
 
     factory { ConvertToBerlinClockUseCase() }
 

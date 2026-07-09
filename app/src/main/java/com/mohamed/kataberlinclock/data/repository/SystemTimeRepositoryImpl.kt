@@ -6,16 +6,16 @@ import com.mohamed.kataberlinclock.domain.repository.TimeRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
-internal class SystemTimeRepository(
+internal class SystemTimeRepositoryImpl(
     private val clock: Clock
 ) : TimeRepository {
 
     override fun getLiveTime(): Flow<Time> = flow {
         while (true) {
             emit(clock.getCurrentTime())
-            delay(1000.milliseconds)
+            delay(1.seconds)
         }
     }
 }

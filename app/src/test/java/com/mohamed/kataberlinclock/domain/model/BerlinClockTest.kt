@@ -7,7 +7,7 @@ import org.junit.jupiter.api.assertDoesNotThrow
 class BerlinClockTest {
 
     @Test
-    fun `correctly ccontracted BerlinClock should not throw exception`() {
+    fun `correctly contracted BerlinClock should not throw exception`() {
         assertDoesNotThrow {
             BerlinClock(
                 secondsLamp = Lamp.OFF,

@@ -16,7 +16,7 @@ class SystemTimeRepositoryTest {
         val fakeClock = object : Clock {
             override fun getCurrentTime(): Time = expectedTime
         }
-        val repository = SystemTimeRepository(fakeClock)
+        val repository = SystemTimeRepositoryImpl(fakeClock)
 
         repository.getLiveTime().take(2).test {
             assertEquals(expectedTime, awaitItem())
